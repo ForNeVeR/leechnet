@@ -2,12 +2,13 @@ module Imaging where
 
 import Happstack.Server (Browsing(DisableBrowsing),
                          Response,
-                         ServerPartT,
+                         ServerPart,
                          ok,
-                         serveDirectory)
+                         serveDirectory,
+                         toResponse)
 
-addImage :: ServerPartT IO [Char]
-addImage = ok "Ok"
+addImage :: ServerPart Response
+addImage = ok $ toResponse "Ok"
 
-viewImage :: ServerPartT IO Response
+viewImage :: ServerPart Response
 viewImage = serveDirectory DisableBrowsing [] "./data"
