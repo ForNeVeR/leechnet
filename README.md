@@ -14,9 +14,16 @@ Execute
 
     $ runhaskell Main.hs
 
-Application will start listening on 31000 port. Currently there is only
-one working URL: `http://localhost:31000/images/view/xxx`, where `xxx`
-can be replaced by a path relative to your `./data` directory.
+Application will start listening on 31000 port. Currently there are two
+working URLs:
+
+1.  `http://localhost:31000/images/view/xxx`, where `xxx` can be
+    replaced by a path relative to your `./data` directory. This URL
+    will show you local file content.
+
+2.  `http://localhost:31000/images/add` - send a file here under the
+    `image` name and it will hopefully be uploaded to the `./data`
+    server directory.
 
 License
 -------
