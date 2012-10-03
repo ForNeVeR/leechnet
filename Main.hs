@@ -1,6 +1,9 @@
- module Main where
+module Main where
 
- import Happstack.Server (nullConf, simpleHTTP, toResponse, ok)
+import Happstack.Server (Conf(..), nullConf, simpleHTTP, toResponse, ok)
 
- main :: IO ()
- main = simpleHTTP nullConf $ ok "Hello, World!"
+configuration :: Conf
+configuration = nullConf { port = 31000 }
+
+main :: IO ()
+main = simpleHTTP configuration $ ok "Hello, World!"
