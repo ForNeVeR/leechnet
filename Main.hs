@@ -1,9 +1,11 @@
 module Main where
 
-import Happstack.Server (Conf(..), nullConf, simpleHTTP, toResponse, ok)
+import Control.Monad
+import Happstack.Server (Conf(..), nullConf, simpleHTTP, dirs, ok)
 
 configuration :: Conf
 configuration = nullConf { port = 31000 }
 
 main :: IO ()
-main = simpleHTTP configuration $ ok "Hello, World!"
+main = simpleHTTP configuration $ msum [ dirs "stations/view" $ ok "Stations",
+										 dirs "stations/add"  $ ok "Add station"]
