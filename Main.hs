@@ -9,5 +9,5 @@ serviceConf :: Conf
 serviceConf = nullConf { port = 31000 }
 
 main :: IO ()
-main = simpleHTTP serviceConf $ msum [ -- dirs "images/add" $ Imaging.addImage,
+main = simpleHTTP serviceConf $ msum [ dirs "images/add" $ Imaging.addImage,
                                        dirs "images/view" $ Imaging.viewImage ]
