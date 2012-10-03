@@ -1,11 +1,12 @@
 module Main where
 
 import Control.Monad
-import Happstack.Server (Conf(..), nullConf, simpleHTTP, dirs, ok)
+import Happstack.Server (Conf(..), dirs, nullConf, simpleHTTP)
 
-configuration :: Conf
-configuration = nullConf { port = 31000 }
+import Imaging
+
+serviceConf :: Conf
+serviceConf = nullConf { port = 31000 }
 
 main :: IO ()
-main = simpleHTTP configuration $ msum [ dirs "stations/view" $ ok "Stations",
-										 dirs "stations/add"  $ ok "Add station"]
+main = simpleHTTP serviceConf $ msum [ dirs "images/add" $ Imaging.addImage ]
