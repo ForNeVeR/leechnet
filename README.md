@@ -3,8 +3,7 @@ leechnet
 
 Installation
 ------------
-First of all, you'll need the `happstack-server` package. Get it, for
-example, by executing
+First of all, you need to install some packages. Do it by executing
 
     $ cabal install happstack-server
     $ cabal install json
