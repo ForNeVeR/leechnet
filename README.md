@@ -7,6 +7,7 @@ First of all, you'll need the `happstack-server` package. Get it, for
 example, by executing
 
     $ cabal install happstack-server
+    $ cabal install json
 
 Starting
 --------
